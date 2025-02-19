@@ -1,12 +1,15 @@
-def days_since_birthday(birthday):
-    year = int(birthday[6:])  # Gets the year
+bday = input("Enter your birthday (DD-MM-YYYY): ") #Asking for bday
+def days_since_birthday(birthday): #Finding days since bday
+    year = int(birthday[6:])  #Extracting BDay
+    current_year = int(input("Enter the current year: ")) #Here i am enetering the year of bday
 
-    current_year = int(input("Enter the current year: "))  # Ask for the current year
+    whole_years = current_year - year - 1   #Getting rid of birthyear
+    leap_years = whole_years // 4  # Approximate leap years (1 every 4 years)
 
-    whole_years = current_year - year - 1  # GEt rid of this year and birth
-    days = whole_years * 365  # *365
+    days = whole_years * 365 + leap_years #Adding all
 
-    print("Days passed:", days)
+    print("Days passed:", days) #Printing
 
-bday = input("Enter your birthday (DD-MM-YYYY): ") #Here we are asking for bday
 days_since_birthday(bday)
+
+
